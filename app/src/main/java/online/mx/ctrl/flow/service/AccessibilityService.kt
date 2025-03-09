@@ -7,6 +7,8 @@ import android.view.accessibility.AccessibilityEvent
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
+import com.github.only52607.compose.window.ComposeFloatingWindow
+import online.mx.ctrl.flow.compose.floating.window.floatingWindow
 
 
 /**
@@ -17,6 +19,9 @@ class CtrlFlowAccessibilityService : AccessibilityService(), LifecycleOwner {
     override val lifecycle: Lifecycle = LifecycleRegistry(this)
     private val tag: String = javaClass.simpleName
 
+    private val floatingWindow by lazy {
+        ComposeFloatingWindow(applicationContext).floatingWindow()
+    }
 
     /**
      * 系统成功连接无障碍服务时回调，可在此调用 setServiceInfo() 对服务进行配置调整
@@ -24,6 +29,7 @@ class CtrlFlowAccessibilityService : AccessibilityService(), LifecycleOwner {
     override fun onServiceConnected() {
         super.onServiceConnected()
         Log.d(tag, "$tag\tonServiceConnected")
+        floatingWindow.show()
     }
 
     /**
@@ -32,7 +38,7 @@ class CtrlFlowAccessibilityService : AccessibilityService(), LifecycleOwner {
     override fun onUnbind(intent: Intent?): Boolean {
 
         Log.d(tag, "$tag\tonUnbind")
-
+        floatingWindow.hide()
         return super.onUnbind(intent)
     }
 

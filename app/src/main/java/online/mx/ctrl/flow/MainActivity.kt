@@ -1,10 +1,8 @@
 package online.mx.ctrl.flow
 
 import android.annotation.SuppressLint
-import android.app.GameManager
-import android.os.Build
 import android.os.Bundle
-import android.view.View
+import android.view.KeyEvent
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -14,35 +12,30 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.viewinterop.AndroidView
 import online.mx.ctrl.flow.pages.Home
 import online.mx.ctrl.flow.ui.theme.CtrlFlowTheme
 
 class MainActivity : ComponentActivity() {
-    @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            AndroidView(factory = { context ->
-                object : View(context) {
-                    override fun onKeyDown(keyCode: Int, event: android.view.KeyEvent): Boolean {
-                        println("onKeyDown $keyCode $event")
-                        return true
-                    }
-                }.apply {
-                    isFocusable = true
-                    requestFocus()
-                }
-            }
-            ) {
-            }
             CtrlFlowTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Home(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
+    }
+
+    @SuppressLint("RestrictedApi")
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        println("KeyEvent $event")
+        if (event.getKeyCode() === KeyEvent.KEYCODE_BUTTON_A) {
+            // 拦截手柄A键事件
+            return true // 返回true表示消费事件
+        }
+        return super.dispatchKeyEvent(event)
     }
 }
 

@@ -40,6 +40,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.compose.floating.window)//悬浮窗
+    implementation(libs.androidx.material.icons.extended)//额外图标
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
