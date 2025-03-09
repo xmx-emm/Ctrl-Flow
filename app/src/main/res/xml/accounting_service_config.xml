@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:accessibilityEventTypes="typeWindowsChanged|typeGestureDetectionEnd|typeWindowStateChanged|typeAnnouncement|typeTouchInteractionEnd|typeViewTextChanged|typeViewFocused|typeViewScrolled|typeNotificationStateChanged|typeTouchExplorationGestureEnd|typeViewClicked|typeViewLongClicked|typeViewSelected"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagDefault|flagReportViewIds|flagIncludeNotImportantViews|flagRequestEnhancedWebAccessibility|flagRequestFingerprintGestures|flagRetrieveInteractiveWindows"
+    android:canPerformGestures="true"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accounting_service_description"
+    android:notificationTimeout="50"
+    android:settingsActivity="online.mx.bill.MainActivity"
+    android:summary="这是summary"
+    android:tileService="online.mx.ctrl.flow.service.CtrlFlowAccessibilityService"
+    tools:targetApi="tiramisu" /><!--    typeViewTextSelectionChanged-->
+    <!--    typeWindowContentChanged-->
+    <!--    typeViewHoverExit 鼠标退出悬停-->

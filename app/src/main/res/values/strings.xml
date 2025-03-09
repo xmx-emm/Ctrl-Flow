@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Ctrl Flow</string>
+    <string name="accounting_service_description">这个是Ctrl Flow 用来点击屏幕用的服务\\n用于获取手柄位置后控制点</string>
 </resources>
