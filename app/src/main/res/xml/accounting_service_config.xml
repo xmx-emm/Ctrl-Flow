@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:accessibilityEventTypes="typeWindowsChanged|typeGestureDetectionEnd|typeWindowStateChanged|typeAnnouncement|typeTouchInteractionEnd|typeViewTextChanged|typeViewFocused|typeViewScrolled|typeNotificationStateChanged|typeTouchExplorationGestureEnd|typeViewClicked|typeViewLongClicked|typeViewSelected"
     android:accessibilityFeedbackType="feedbackGeneric"
-    android:accessibilityFlags="flagDefault|flagReportViewIds|flagIncludeNotImportantViews|flagRequestEnhancedWebAccessibility|flagRequestFingerprintGestures|flagRetrieveInteractiveWindows"
+    android:accessibilityFlags="flagInputMethodEditor"
     android:canPerformGestures="true"
     android:canRetrieveWindowContent="true"
     android:description="@string/accounting_service_description"

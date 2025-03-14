@@ -1,8 +1,10 @@
 package online.mx.ctrl.flow.pages
 
 import android.content.ActivityNotFoundException
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.net.Uri
 import android.provider.Settings
 import androidx.activity.compose.ManagedActivityResultLauncher
@@ -27,6 +29,8 @@ fun Home(modifier: Modifier = Modifier) {
     ) {
         println("rememberLauncherForActivityResult\t$it")
     }
+
+
     Column(modifier = modifier) {
         Button(onClick = { context.openAccessibilityActivity() }) {
             Text("打开无障碍页面")

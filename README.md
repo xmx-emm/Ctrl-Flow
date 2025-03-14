@@ -3,6 +3,8 @@ TODO
 1.捕获并拦截手柄事件
 2.控制手机屏幕
 
+https://developer.aliyun.com/article/1489580
+
 初步想法是通过无障碍模式来控制手机屏幕
 跟据不同的app来匹配控制的模式
 

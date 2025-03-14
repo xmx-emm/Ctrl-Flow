@@ -43,6 +43,7 @@ class CtrlFlowAccessibilityService : AccessibilityService(), LifecycleOwner {
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
+//        Log.d(tag, "$tag\tonAccessibilityEvent $event")
         rootInActiveWindow?.let {
         }
     }
